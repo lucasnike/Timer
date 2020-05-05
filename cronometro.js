@@ -2,7 +2,7 @@ let nodeList = document.querySelectorAll('span')
 let numeros = Array.from(nodeList)
 
 let isStoped = false
-let isRunning = true
+
 
 let s4 = 1
 let s3 = 0
