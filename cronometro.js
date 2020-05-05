@@ -18,7 +18,7 @@ function regularSetInterval() {
     if (contador === 1) {
         const iniciar = () => {
             isStoped = false
-            let inter = setInterval(() => {
+            inter = setInterval(() => {
                 if (isStoped === false) {
             
                     if (s4 === 10 && s3 != 6) {
@@ -62,5 +62,5 @@ function zerar(){
     numeros[0].innerHTML = 0
     isStoped = true
     contador = 0
-    clearInterval()
+    clearInterval(inter)
 }
