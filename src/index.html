@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&display=swap" rel="stylesheet"> 
+
+    <style>
+        * {
+            font-family: 'Fira Code', monospace;
+            font-variant-ligatures: contextual;
+        }
+        #timer {
+    text-align: center;
+    font-size: 100px;
+    margin-top: 200px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: aliceblue;
+}
+
+button {
+    width: 140px;
+    height: 50px;
+    font-size: xx-large;
+    background-position: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: bold;
+    border-radius: 15pt;
+    color: #444444;
+    background-color: white;
+}
+button:hover {
+    background-color: #c0c0c0;
+    transition:0.3s;
+    color: aliceblue;
+}
+body {
+    background-color: #333333;
+}
+
+.image {
+    height: 30px;
+    width: 30px;
+    padding-left: 46px;
+    padding-right: 46px;
+}
+
+.image:hover {
+    filter: invert(1);
+}
+
+    </style>
+</head>
+<body>
+    <h1 id="timer">
+        <span>0</span><span>0</span>:<span>0</span><span>0</span>
+    </h1>
+
+    <center>
+        <button type="button" pausar-timer="timer" class="pause"]> Iniciar </button>
+        <button type="button" zerar-timer="timer">Zerar</button>
+    </center>
+
+    <script>
+        function configurarTimer(id) {
+    const numeros = Array.from(document.querySelectorAll('span'))
+    let pausado = true
+    let nums = [0,0,0,1]
+
+    document.querySelector(`[pausar-timer]`).onclick = e => {
+        pausado = !pausado
+    }
+    document.querySelector(`[zerar-timer]`).onclick = e => {
+        for(let i = 0; i < nums.length; i++){
+            numeros[i].innerHTML = 0
+            nums[i] = 0
+            if(i === 3) nums[i] = 1
+        }
+        pausado = true
+    }
+    setInterval(() => {
+        if (pausado === false) {
+            if (nums[3] === 10 && nums[2] != 6) {
+                nums[3] = 0
+                nums[2]++
+            }
+            if (nums[2] === 6) {
+                nums[1]++
+                nums[2] = 0
+            }
+            if (nums[1] === 10) {
+                nums[0]++
+                nums[1] = 0
+            } 
+            numeros[3].innerHTML = nums[3]++
+            numeros[2].innerHTML = nums[2]
+            numeros[1].innerHTML = nums[1]
+            numeros[0].innerHTML = nums[0]
+        }
+    }, 1000 )
+}
+configurarTimer(timer)
+    </script>
+</body>
+</html>
