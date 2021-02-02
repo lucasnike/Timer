@@ -17,39 +17,40 @@
     text-align: center;
     font-size: 100px;
     margin-top: 200px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
     color: aliceblue;
+}
+
+.btn-area {
+    display: flex;
+    justify-content: center;
 }
 
 button {
-    width: 140px;
-    height: 50px;
-    font-size: xx-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 15px;
+
+    padding: 15px 55px;
+    width: 130px;
+    font-size: 20px;
     background-position: center;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-weight: bold;
-    border-radius: 15pt;
-    color: #444444;
-    background-color: white;
+   
+    border-radius: 5px;
+    color: #fff;
+    background-color:  #9466ff;
+    border: none;
+
+    cursor: pointer;
 }
 button:hover {
-    background-color: #c0c0c0;
+    background-color: #4c00ff;
     transition:0.3s;
-    color: aliceblue;
 }
 body {
-    background-color: #333333;
-}
-
-.image {
-    height: 30px;
-    width: 30px;
-    padding-left: 46px;
-    padding-right: 46px;
-}
-
-.image:hover {
-    filter: invert(1);
+    background-color: #191522;
+    background-color: #121214;
 }
 
     </style>
@@ -59,10 +60,10 @@ body {
         <span>0</span><span>0</span>:<span>0</span><span>0</span>
     </h1>
 
-    <center>
-        <button type="button" pausar-timer="timer" class="pause"]> Iniciar </button>
-        <button type="button" zerar-timer="timer">Zerar</button>
-    </center>
+        <div class="btn-area">
+            <button type="button" pausar-timer="timer" class="pause"> Iniciar </button>
+            <button type="button" zerar-timer="timer">Zerar</button>
+        </div>
 
     <script>
         function configurarTimer(id) {
